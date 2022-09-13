@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <style>
+        body {
+            align-items: center;
+            justify-content: center;
+
+    background-color: #000;
+    display: flex;
+    height: 100vh;
+  }
+  
+  .recuadro {    
+
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 30%;
+    padding: 20px;
+    width: 30%;
+    margin-left: 2.5%;
+
+  }
+  .Imagen {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 30%;
+    padding: 20px;
+    width: 30%;
+    margin-left: 2.5%;
+  }
+  .title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-left: 5%;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  
+  .cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+  }
+  
+  .cut-short {
+    width: 50px;
+  }
+  
+  .input:focus ~ .cut,
+
+
+  
+  .placeholder {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  .input:focus ~ .placeholder,
+
+  
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  .input:focus ~ .placeholder {
+    color: #dc2f55;
+  }
+  .submit {
+    background-color: rgb(80, 2, 80);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-bottom:2%;
+
+     outline: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .boton {
+    background-color: rgb(80, 2, 80);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    outline: 0;
+    width: 30%;
+    margin-bottom:2%;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+  
+  .cosa {
+      margin-right:5%;
+  }
+    </style>
+</head>
+<body>
+    <div class="Imagen">
+        <div class="title" >Calcular deslizamiento</div>
+        <div  id = "ordenes" class="input-container ic1">
+            <form method="POST" , enctype="multipart/form-data" action='/calculardeslizamiento'>
+
+                <button type="text" class="submit ">Comenzar</button>
+            </form>
+          
+    </div>
+    </div>
+    <div class="form recuadro">
+            <div class="title">Introducir ordenes</div>
+            <div  id = "ordenes" class="input-container ic1">
+                <a href="Ordenes">
+                    <button type="text" class="submit ">Introducir</button>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <div>
+        
+
+    </div>
+</body>
+
+  
+   
+</html>

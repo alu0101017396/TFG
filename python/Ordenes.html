@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        let contador = 2;
+        function AddOrden(){
+            if (contador <= 5) {
+
+                document.getElementById("ordenes").innerHTML +=   ' <label for="Orden' + contador + '" class="placeholder"></label><br> ' +
+                '<input id="Orden' + contador + '" name="Orden' + contador + '" class="input" type="text" placeholder=" "/>';
+                contador++;
+                if (contador > 5) {
+                    document.getElementById("addOrdenDiv").innerHTML = "";
+                    document.getElementById("addOrdenDiv").innerHTML = '<button type="text" class="submit" style="width:100% !important ; margin-left:0% !important;">Introducir</button>';
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            align-items: center;
+    background-color: #000;
+    display: flex;
+    height: 100vh;
+  }
+  
+  .recuadro {    
+
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 80%;
+    padding: 20px;
+    width: 30%;
+    margin-left: 2.5%;
+
+  }
+  .Imagen {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 80%;
+    padding: 20px;
+    width: 60%;
+    margin-left: 2.5%;
+  }
+  .title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  
+  .subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-left: 5%;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  
+  .cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+  }
+  
+  .cut-short {
+    width: 50px;
+  }
+  
+  .input:focus ~ .cut,
+
+
+  
+  .placeholder {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  .input:focus ~ .placeholder,
+
+  
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  .input:focus ~ .placeholder {
+    color: #dc2f55;
+  }
+  .submit {
+    background-color: rgb(12, 23, 68);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-bottom:2%;
+
+     outline: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .boton {
+    background-color: rgb(80, 2, 80);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    outline: 0;
+    width: 30%;
+    margin-bottom:2%;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+  
+  .cosa {
+      margin-right:5%;
+  }
+    </style>
+</head>
+<body>
+    <div class="Imagen">
+        <div class="title" style="text-align: center !important; margin-bottom: 5%;">Instrucciones</div>
+        <div class="subtitle">Error de acci&oacute;n <span class="cosa" style="float:right;">/</span></div>
+        <div class="subtitle">Error de instrucci&oacute;n<span class="cosa" style="float:right;">0</span> </div>
+        <div class="subtitle">Preguntar por bater&iacute;a<span class="cosa" style="float:right;">3</span> </div>
+        <div class="subtitle">Pedir medida de sensor<span class="cosa" style="float:right;">4</span> </div>
+        <div class="subtitle">Mover recto<span class="cosa" style="float:right;">F N&uacute;mero de cent&iacute;metros 5</span> </div>
+        <div class="subtitle">Mover derecha<span class="cosa" style="float:right;">D N&uacute;mero de cent&iacute;metros 5</span> </div>
+        <div class="subtitle">Mover atr&aacute;s<span class="cosa" style="float:right;">B N&uacute;mero de cent&iacute;metros 5</span> </div>
+        <div class="subtitle">Mover izquierda<span class="cosa" style="float:right;">I N&uacute;mero de cent&iacute;metros 5</span> </div>
+        <div class="subtitle" style="margin-top:10% !important;">*No se deben poner espacios entre los par&aacute;metros de una orden* </div>
+
+    </div>
+    <div class="form recuadro">
+        <form method="POST" , enctype="multipart/form-data" action='/guardarOrden'>
+            <div>
+            <div class="title">Introducir ordenes</div>
+            <div  id = "ordenes" class="input-container ic1">
+                <div id="addOrdenDiv">
+                    <button type="text" class="submit ">Introducir</button>
+                </div>
+
+                <label for="Orden1" class="placeholder"></label><br>
+                <input id="Orden1" name="Orden1" class="input" type="text" placeholder=" " />
+                <label for="Orden2" class="placeholder"></label><br>
+                <input id="Orden2" name="Orden2" class="input" type="text" placeholder=" " />
+                <label for="Orden3" class="placeholder"></label><br>
+                <input id="Orden3" name="Orden3" class="input" type="text" placeholder=" " />
+                <label for="Orden4" class="placeholder"></label><br>
+                <input id="Orden4" name="Orden4" class="input" type="text" placeholder=" " />
+                <label for="Orden5" class="placeholder"></label><br>
+                <input id="Orden5" name="Orden5" class="input" type="text" placeholder=" " />
+            </div>
+
+        </div>
+        </form>
+
+    </div>
+    
+    <div>
+        
+
+    </div>
+</body>
+
+  
+   
+</html>
